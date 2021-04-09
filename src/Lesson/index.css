@@ -1,0 +1,91 @@
+/* INSTRUCTION */
+pre {
+  width: 100%;
+  overflow-wrap: break-word;
+}
+
+blockquote {
+  padding-left: 12px;
+  border-left: 5px solid #dd6b20;
+  background: #2d3748;
+  border-radius: 5px;
+  margin-top: 16px !important;
+}
+
+.lesson-header,
+.lesson-subheader {
+  text-align: center;
+  color: #9f7aea;
+  font-weight: bold;
+  padding-bottom: 4px;
+  border-bottom: 1px solid #553c9a;
+  text-transform: capitalize;
+}
+
+.lesson-header {
+  font-size: 1.25rem;
+}
+
+.lesson-subheader {
+  font-size: 1rem;
+  padding-top: 16px;
+}
+
+.lesson-p {
+  line-height: 1.8;
+  padding-top: 16px;
+  font-size: 15px;
+}
+
+.lesson-code {
+  color: #9ae6b4;
+  font-size: 14px;
+  background-color: #1d4044;
+  padding: 2px 4px;
+  border-radius: 4px;
+}
+
+.lesson-pre {
+  font-size: 0.75rem;
+  white-space: pre-wrap;
+}
+
+.lesson-list {
+  list-style-position: inside;
+  display: flex;
+  flex-direction: column;
+}
+
+.lesson-list-item {
+  padding-top: 8px;
+}
+
+.lesson-link:link,
+.lesson-link:visited {
+  color: #ed64a6;
+  transition: color 200ms ease-in-out;
+}
+
+.lesson-link:hover,
+.lesson-link:active {
+  color: #9f7aea;
+}
+
+/* Lesson6 and Result6 */
+#codemirror-lesson,
+#codemirror-result {
+  width: clamp(300px, 100%, 44ch);
+  height: calc(100vh - 95px);
+}
+
+/* CODEMIRROR */
+.cm-editor {
+  height: 100%;
+  outline: none;
+  border: none;
+}
+
+/* wrap the code editor */
+.cm-content {
+  white-space: pre-wrap !important;
+}

@@ -1,0 +1,269 @@
+{
+  "1": {
+    "title": "How to query JSON with GROQ?",
+    "initialCode": "",
+    "codeSolution": "*[completed == false]{id, title}",
+    "result": [
+      {
+        "id": 1,
+        "title": "Travel to the edge of the world"
+      }
+    ]
+  },
+  "2": {
+    "title": "Let's warm up with some exercises!",
+    "initialCode": "*[completed == false]{id, title}",
+    "codeSolution": "",
+    "result": ""
+  },
+  "3": {
+    "title": "Querying Game of Thrones Characters",
+    "initialCode": "",
+    "codeSolution": "",
+    "result": ""
+  },
+  "4": {
+    "title": "Working with Filters",
+    "initialCode": "*.characters",
+    "codeSolution": "",
+    "result": ""
+  },
+  "5": {
+    "title": "Working with projections",
+    "initialCode": "*.characters",
+    "codeSolution": "",
+    "result": ""
+  },
+  "6": {
+    "title": "More Projections",
+    "initialCode": "*[]{\"aliases\": { \n\t// your code here \n\t\"totalAliases\": count(*[].aliases[]) \n}}",
+    "codeSolution": "*[]{\"aliases\": {name, \"percentage\": round( count(aliases) / count(*[].aliases[]) * 100, 3), \"totalAliases\": count(*[].aliases[])}}",
+    "result": [
+      {
+        "aliases": {
+          "name": "Arya Stark",
+          "percentage": 23.529,
+          "totalAliases": 68
+        }
+      },
+      {
+        "aliases": {
+          "name": "Jon Snow",
+          "percentage": 11.765,
+          "totalAliases": 68
+        }
+      },
+      {
+        "aliases": {
+          "name": "Ramsay Snow",
+          "percentage": 8.824,
+          "totalAliases": 68
+        }
+      },
+      {
+        "aliases": {
+          "name": "Samwell Tarly",
+          "percentage": 10.294,
+          "totalAliases": 68
+        }
+      },
+      {
+        "aliases": {
+          "name": "Tyrion Lannister",
+          "percentage": 16.176,
+          "totalAliases": 68
+        }
+      },
+      {
+        "aliases": {
+          "name": "Daenerys Targaryen",
+          "percentage": 16.176,
+          "totalAliases": 68
+        }
+      },
+      {
+        "aliases": {
+          "name": "Tormund",
+          "percentage": 13.235,
+          "totalAliases": 68
+        }
+      }
+    ]
+  },
+  "7": {
+    "title": "Understanding Slice",
+    "initialCode": "*.characters",
+    "codeSolution": "*.characters[isFemale == true && culture == \"Northmen\"][0...5]{name}",
+    "result": [
+      {
+        "name": "Alys Karstark"
+      },
+      {
+        "name": "Alys Karstark"
+      },
+      {
+        "name": "Alys Karstark"
+      },
+      {
+        "name": "Alysane Mormont"
+      },
+      {
+        "name": "Arya Stark"
+      }
+    ]
+  },
+  "8": {
+    "title": "Ordering Result",
+    "initialCode": "*.characters",
+    "codeSolution": "*.characters[count(children) > 3]{name, children} | order(count(children) desc)[0...5]",
+    "result": [
+      {
+        "name": "Robert I Baratheon",
+        "children": [565, 775, 1029, 1741, 1201, 1418, 1355, 1188]
+      },
+      {
+        "name": "Aegon IV",
+        "children": [274, 271, 267, 47, 1242, 1944]
+      },
+      {
+        "name": "Viserys I",
+        "children": [874, 156, 39, 488, 55, 275]
+      },
+      {
+        "name": "Aegon III",
+        "children": [273, 160, 270, 872, 1358]
+      },
+      {
+        "name": "Alysanne Targaryen",
+        "children": [45, 109, 157, 265, 951]
+      }
+    ]
+  },
+  "9": {
+    "title": "Joining Data",
+    "initialCode": "*[_type == \"character\" && defined(father)][]{ \n\t// your code here \n}",
+    "codeSolution": "*[_type == \"character\" && defined(father)][]{ name, \"oldMan\": father->name }",
+    "result": [
+      {
+        "name": "Rodrik Greyjoy",
+        "oldMan": "Balon Greyjoy"
+      },
+      {
+        "name": "Asha Greyjoy",
+        "oldMan": "Balon Greyjoy"
+      },
+      {
+        "name": "Theon Greyjoy",
+        "oldMan": "Balon Greyjoy"
+      }
+    ]
+  },
+  "10": {
+    "title": "Do GROQ Have Conditionals?",
+    "initialCode": "*.characters",
+    "codeSolution": "*.characters[isFemale == true]{name, aliases, \"popularity\": select(count(aliases) >= 5 => \"high\", count(aliases) > 2 => \"medium\",\"low\")} | order(count(aliases) desc)[0...10]",
+    "result": [
+      {
+        "name": "Arya Stark",
+        "aliases": [
+          "Arya Horseface",
+          "Arya Underfoot",
+          "Arry",
+          "Lumpyface",
+          "Lumpyhead",
+          "Stickboy",
+          "Weasel",
+          "Nymeria",
+          "Squan",
+          "Saltb",
+          "Cat of the Canaly",
+          "Bets",
+          "The Blind Girh",
+          "The Ugly Little Girl",
+          "Mercedenl",
+          "Mercye"
+        ],
+        "popularity": "high"
+      },
+      {
+        "name": "Daenerys Targaryen",
+        "aliases": [
+          "Dany",
+          "Daenerys Stormborn",
+          "The Unburnt",
+          "Mother of Dragons",
+          "Mother",
+          "Mhysa",
+          "The Silver Queen",
+          "Silver Lady",
+          "Dragonmother",
+          "The Dragon Queen",
+          "The Mad King's daughter"
+        ],
+        "popularity": "high"
+      },
+      {
+        "name": "Catelyn Stark",
+        "aliases": [
+          "Catelyn Tully",
+          "Lady Stoneheart",
+          "The Silent Sistet",
+          "Mother Mercilesr",
+          "The Hangwomans"
+        ],
+        "popularity": "high"
+      },
+      {
+        "name": "Melisandre",
+        "aliases": [
+          "The Red Priestess",
+          "The Red Woman",
+          "The King's Red Shadow",
+          "Lady Red",
+          "Lot Seven"
+        ],
+        "popularity": "high"
+      },
+      {
+        "name": "Rhaenyra Targaryen",
+        "aliases": [
+          "The Realm's Delight",
+          "The Whore of Dragonstone",
+          "King Maegor with Teats",
+          "Maegor's Teats",
+          "The Half-Year Queen"
+        ],
+        "popularity": "high"
+      },
+      {
+        "name": "Margaery Tyrell",
+        "aliases": ["The Little Queen", "The Little Rose", "Maid Margaery"],
+        "popularity": "medium"
+      },
+      {
+        "name": "Brienne of Tarth",
+        "aliases": [
+          "The Maid of Tarth",
+          "Brienne the Beauty",
+          "Brienne the Blue"
+        ],
+        "popularity": "medium"
+      },
+      {
+        "name": "Sansa Stark",
+        "aliases": ["Little bird", "Alayne Stone", "Jonquil"],
+        "popularity": "medium"
+      },
+      {
+        "name": "Lyanna Stark",
+        "aliases": ["The She-Wolf", "The Wolf Maid", "Lya"],
+        "popularity": "medium"
+      },
+      {
+        "name": "Asha Greyjoy",
+        "aliases": ["Esgred", "The Kraken's Daughter"],
+        "popularity": "low"
+      }
+    ]
+  }
+}
