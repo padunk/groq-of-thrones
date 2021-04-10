@@ -7,7 +7,8 @@ export function checkResult(source, target) {
 const datasetStruct = {
   todo: `/* This lesson dataset structure
   {
-    id: string;
+    userID: number;
+    id: number;
     title: string;
     completed: boolean;
   } */`,
