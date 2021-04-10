@@ -1,6 +1,15 @@
 import React, { useContext } from "react"
 import { NavLink } from "react-router-dom"
-import { Flex, Box, Spacer, Heading, Link, Image } from "@chakra-ui/react"
+import {
+  Flex,
+  Box,
+  Spacer,
+  Heading,
+  Link,
+  LinkBox,
+  Image,
+  VisuallyHidden,
+} from "@chakra-ui/react"
 import { VscGithubInverted } from "react-icons/vsc"
 import { LessonContext } from "../context/LessonContext"
 
@@ -21,10 +30,17 @@ export const Nav = () => {
           display="flex"
           alignItems="center"
         >
-          <NavLink to="/">
-            <Image src="/logo.svg" display="inline" boxSize="40px" />
-          </NavLink>
-          GROQ of Thrones
+          <LinkBox>
+            <NavLink to="/">
+              <Image
+                src="/logo.svg"
+                display="inline"
+                boxSize="40px"
+                alt="unofficial groq logo"
+              />
+            </NavLink>
+            GROQ of Thrones
+          </LinkBox>
         </Heading>
       </Box>
       <Spacer />
@@ -40,11 +56,12 @@ export const Nav = () => {
             Lessons
           </button>
         </Box>
-        <Box as="li" listStyleType="none" paddingY="1" paddingX="2">
+        <LinkBox as="li" listStyleType="none" paddingY="1" paddingX="2">
           <Link href="https://github.com/padunk/groq-of-thrones" isExternal>
             <VscGithubInverted />
+            <VisuallyHidden>Github Repository</VisuallyHidden>
           </Link>
-        </Box>
+        </LinkBox>
       </Flex>
     </Flex>
   )
