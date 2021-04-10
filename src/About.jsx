@@ -7,9 +7,9 @@ import {
   ListItem,
   Link,
   Flex,
-} from "@chakra-ui/layout"
+  Grid,
+} from "@chakra-ui/react"
 import { GiInspiration, GiBlackBook, GiRoad, GiSeaDragon } from "react-icons/gi"
-import { Grid } from "@chakra-ui/layout"
 
 const StyledLink = ({ href, children }) => {
   return (

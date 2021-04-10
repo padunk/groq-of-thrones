@@ -1,6 +1,6 @@
 import React, { useContext } from "react"
 import { NavLink } from "react-router-dom"
-import { Flex, Box, Spacer, Heading, Link } from "@chakra-ui/layout"
+import { Flex, Box, Spacer, Heading, Link } from "@chakra-ui/react"
 import { VscGithubInverted } from "react-icons/vsc"
 import { LessonContext } from "../context/LessonContext"
 import { Image } from "@chakra-ui/image"

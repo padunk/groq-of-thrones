@@ -1,5 +1,5 @@
 import React from "react"
-import { Text, Flex } from "@chakra-ui/layout"
+import { Flex } from "@chakra-ui/react"
 import { Image } from "@chakra-ui/image"
 
 export const NoMatch = () => {

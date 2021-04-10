@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react"
 import DOMpurify from "dompurify"
-import { Box, Flex } from "@chakra-ui/layout"
+import { Box, Flex } from "@chakra-ui/react"
 import "./index.css"
 
 export const Instruction = ({ lessonID }) => {

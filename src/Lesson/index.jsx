@@ -1,7 +1,7 @@
 import React, { useEffect, useLayoutEffect, useRef, useState } from "react"
 import { Link, useHistory, useParams } from "react-router-dom"
 import { parse, evaluate } from "groq-js"
-import { Flex, Box } from "@chakra-ui/layout"
+import { Flex, Box } from "@chakra-ui/react"
 import { Button } from "@chakra-ui/button"
 import { GrPlayFill, GrNext } from "react-icons/gr"
 import Split from "../libs/Split"

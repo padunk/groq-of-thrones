@@ -3,8 +3,7 @@ import React, { useRef, useEffect, useState } from "react"
 import { basicSetup, EditorState, EditorView } from "@codemirror/basic-setup"
 import { javascript } from "@codemirror/lang-javascript"
 import { oneDark } from "@codemirror/theme-one-dark"
-import { Flex } from "@chakra-ui/layout"
-import { useParams } from "react-router"
+import { Flex } from "@chakra-ui/react"
 import "./index.css"
 
 const CodemirrorLesson = ({ codeInput, setCodeInput }) => {

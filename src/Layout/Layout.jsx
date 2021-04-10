@@ -1,5 +1,5 @@
 import React from "react"
-import { Flex } from "@chakra-ui/layout"
+import { Flex } from "@chakra-ui/react"
 import { LessonPane } from "./LessonPane"
 import { Footer } from "./Footer"
 import { Nav } from "./Nav"

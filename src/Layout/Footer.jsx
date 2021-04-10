@@ -1,6 +1,5 @@
 import React from "react"
-import { Link, Flex } from "@chakra-ui/layout"
-import { Text } from "@chakra-ui/layout"
+import { Link, Flex, Text } from "@chakra-ui/react"
 
 export const Footer = () => {
   return (

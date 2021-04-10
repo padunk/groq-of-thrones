@@ -1,5 +1,5 @@
 import React from "react"
-import { Flex, Text, Box } from "@chakra-ui/layout"
+import { Flex, Text, Box } from "@chakra-ui/react"
 import { Image } from "@chakra-ui/image"
 
 export const Finished = () => {
