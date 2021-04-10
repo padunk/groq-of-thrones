@@ -1,6 +1,6 @@
 import React from "react"
-import { Button } from "@chakra-ui/button"
-import { Text, Flex, Link, Heading } from "@chakra-ui/layout"
+import { Link as LinkRouter } from "react-router-dom"
+import { Button, Text, Flex, Link, Heading } from "@chakra-ui/react"
 
 export const Intro = () => {
   return (
@@ -12,7 +12,8 @@ export const Intro = () => {
       <Text>
         If you want to know more, head to our{" "}
         <Link
-          href="/about"
+          as={LinkRouter}
+          to="/about"
           bgGradient="linear(to-r, #F56565 ,#0BC5EA)"
           bgClip="text"
           fontWeight="semibold"
@@ -22,7 +23,8 @@ export const Intro = () => {
       </Text>
       <Button colorScheme="pink" mt="4" p="0">
         <Link
-          href="/lesson/1"
+          as={LinkRouter}
+          to="/lesson/1"
           w="full"
           h="full"
           display="flex"

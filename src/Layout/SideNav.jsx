@@ -1,5 +1,6 @@
 import React from "react"
-import { Text, ListItem, Flex, OrderedList, Link } from "@chakra-ui/layout"
+import { Link as LinkRouter } from "react-router-dom"
+import { Text, ListItem, Flex, OrderedList, Link } from "@chakra-ui/react"
 import lessons from "../lessons/data/lessons.json"
 
 export const SideNav = () => {
@@ -14,7 +15,8 @@ export const SideNav = () => {
             <ListItem px="4" key={i}>
               <Text color="pink.400">Lesson - {lesson[0]}</Text>
               <Link
-                href={`/lesson/${lesson[0]}`}
+                as={LinkRouter}
+                to={`/lesson/${lesson[0]}`}
                 textTransform="capitalize"
                 letterSpacing="wide"
               >
