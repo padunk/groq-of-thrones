@@ -55,13 +55,11 @@ Since the return value will be an array, you could also be more specific with yo
 ## Exercises {.lesson-subheader}
 
 1. Directly filter on the root object `*[isFemale == true && culture == "Braavosi"]{name}`{.lesson-code}. {.lesson-list-item}
-2. What's the difference between:
+2. What's the difference between: {.lesson-list-item}
+   {.lesson-list}
 
 ```js {.lesson-pre}
 *.characters[isFemale == true && culture == "Braavosi"]{name}[0]
 // AND
 *.characters[0][isFemale == true && culture == "Braavosi"]{name}
 ```
-
-{.lesson-list-item}
-{.lesson-list}
