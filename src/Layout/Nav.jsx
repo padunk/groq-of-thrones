@@ -1,9 +1,8 @@
 import React, { useContext } from "react"
 import { NavLink } from "react-router-dom"
-import { Flex, Box, Spacer, Heading, Link } from "@chakra-ui/react"
+import { Flex, Box, Spacer, Heading, Link, Image } from "@chakra-ui/react"
 import { VscGithubInverted } from "react-icons/vsc"
 import { LessonContext } from "../context/LessonContext"
-import { Image } from "@chakra-ui/image"
 
 export const Nav = () => {
   const [openLessonPane, setOpenLessonPane] = useContext(LessonContext)
