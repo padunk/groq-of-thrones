@@ -19,7 +19,7 @@ const StyledLink = ({ href, children }) => {
       bgGradient="linear(to-l, #F6E05E, #B794F4)"
       bgClip="text"
       _hover={{
-        bgGradient: "linear(to-r, #F56565 ,#0BC5EA)",
+        bgGradient: "linear(to-l, #F56565 ,#0BC5EA)",
       }}
     >
       {children}
