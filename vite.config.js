@@ -32,13 +32,13 @@ export default {
     }),
   ],
   build: {
-    sourcemap: true,
+    // sourcemap: true,
     rollupOptions: {
       output: {
         manualChunks: {
           characters: ["/src/lessons/data/characters.json"],
           quotes: ["/src/lessons/data/quotes.json"],
-          chakra: ["@chakra-ui/layout"],
+          chakra: ["@chakra-ui/react"],
         },
       },
     },
