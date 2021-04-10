@@ -1,44 +1,52 @@
 {
-    "name": "groq-of-thrones",
-    "version": "0.0.0",
-    "scripts": {
-        "dev": "vite",
-        "build": "vite build",
-        "serve": "vite preview"
-    },
-    "dependencies": {
-        "@chakra-ui/react": "^1.4.1",
-        "@codemirror/basic-setup": "^0.18.0",
-        "@codemirror/closebrackets": "^0.18.0",
-        "@codemirror/lang-javascript": "^0.18.0",
-        "@codemirror/lang-json": "^0.18.0",
-        "@codemirror/theme-one-dark": "^0.18.0",
-        "@codemirror/view": "^0.18.3",
-        "@emotion/react": "11",
-        "@emotion/styled": "11",
-        "codemirror": "^5.60.0",
-        "dompurify": "^2.2.7",
-        "framer-motion": "4",
-        "groq": "^2.2.6",
-        "groq-js": "^0.2.0",
-        "highlight.js": "^10.7.1",
-        "lodash.isequal": "^4.5.0",
-        "markdown-it": "^12.0.4",
-        "markdown-it-attrs": "^4.0.0",
-        "react": "^17.0.0",
-        "react-dom": "^17.0.0",
-        "react-icons": "^4.2.0",
-        "react-router-dom": "^5.2.0",
-        "react-sliding-pane": "^7.0.0",
-        "react-toastify": "^7.0.3",
-        "split.js": "^1.6.2"
-    },
-    "devDependencies": {
-        "@babel/core": "^7.13.10",
-        "@babel/preset-react": "^7.12.13",
-        "@vitejs/plugin-react-refresh": "^1.1.0",
-        "prettier": "2.2.1",
-        "vite": "^2.1.2",
-        "vite-plugin-markdown": "^2.0.2"
-    }
+  "name": "groq-of-thrones",
+  "version": "0.0.0",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "serve": "vite build && vite preview",
+    "preview": "vite preview"
+  },
+  "author": {
+    "name": "Abraham A. A. ",
+    "url": "https://anakagung.com"
+  },
+  "license": "MIT",
+  "repository": {
+    "url": "https://github.com/padunk/groq-of-thrones"
+  },
+  "dependencies": {
+    "@chakra-ui/react": "^1.4.1",
+    "@codemirror/basic-setup": "^0.18.0",
+    "@codemirror/closebrackets": "^0.18.0",
+    "@codemirror/lang-javascript": "^0.18.0",
+    "@codemirror/lang-json": "^0.18.0",
+    "@codemirror/theme-one-dark": "^0.18.0",
+    "@codemirror/view": "^0.18.3",
+    "@emotion/react": "11",
+    "@emotion/styled": "11",
+    "dompurify": "^2.2.7",
+    "framer-motion": "4",
+    "groq": "^2.2.6",
+    "groq-js": "^0.2.0",
+    "highlight.js": "^10.7.1",
+    "lodash.isequal": "^4.5.0",
+    "markdown-it": "^12.0.4",
+    "markdown-it-attrs": "^4.0.0",
+    "react": "^17.0.0",
+    "react-dom": "^17.0.0",
+    "react-icons": "^4.2.0",
+    "react-router-dom": "^5.2.0",
+    "react-sliding-pane": "^7.0.0",
+    "react-toastify": "^7.0.3",
+    "split.js": "^1.6.2"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.13.10",
+    "@babel/preset-react": "^7.12.13",
+    "@vitejs/plugin-react-refresh": "^1.1.0",
+    "prettier": "2.2.1",
+    "vite": "^2.1.2",
+    "vite-plugin-markdown": "^2.0.2"
+  }
 }
