@@ -2,7 +2,7 @@
   "1": {
     "title": "How to query JSON with GROQ?",
     "initialCode": "",
-    "codeSolution": "*[completed == false]{id, title}",
+    "codeSolution": ["*[completed == false]{id, title}"],
     "result": [
       {
         "id": 1,
@@ -13,31 +13,48 @@
   "2": {
     "title": "Let's warm up with some exercises!",
     "initialCode": "*[completed == false]{id, title}",
-    "codeSolution": "",
+    "codeSolution": [
+      "If you change the order of the filter and the projection you will do the projection first and then apply the filter. This means that you’re filtering on a list of todos that only contain `title` and `userID`, and `completed == true` can never be true.",
+      "If you remove `[completed == false]` you will get all todos, not only those that are completed. If you remove `{title, userID}` you will get all properties.",
+      "*[userId == 2]",
+      "*[completed == false && userID == 2]\n//OR\n*[!completed && userID == 2]"
+    ],
     "result": ""
   },
   "3": {
     "title": "Querying Game of Thrones Characters",
     "initialCode": "",
-    "codeSolution": "",
+    "codeSolution": [
+      "If you filter directly on the root object you will get `null`",
+      "There is no difference on the end result."
+    ],
     "result": ""
   },
   "4": {
     "title": "Working with Filters",
     "initialCode": "*.characters",
-    "codeSolution": "",
+    "codeSolution": [
+      "*.characters[culture in [\"Valyrian\", \"Free Folk\"]]",
+      "There is no difference on the end result.",
+      "*.characters[born match \"289 AC\"]"
+    ],
     "result": ""
   },
   "5": {
     "title": "Working with projections",
     "initialCode": "*.characters",
-    "codeSolution": "",
+    "codeSolution": [
+      "*.characters[count(titles) >= 2]",
+      "*.characters[count(titles) >= 2 && isFemale]"
+    ],
     "result": ""
   },
   "6": {
     "title": "More Projections",
     "initialCode": "*[]{\"aliases\": { \n\t// your code here \n\t\"totalAliases\": count(*[].aliases[]) \n}}",
-    "codeSolution": "*[]{\"aliases\": {name, \"percentage\": round( count(aliases) / count(*[].aliases[]) * 100, 3), \"totalAliases\": count(*[].aliases[])}}",
+    "codeSolution": [
+      "*[]{\"aliases\": {\nname,\n\"percentage\": round( count(aliases) / count(*[].aliases[]) * 100, 3),\n\"totalAliases\": count(*[].aliases[])}}"
+    ],
     "result": [
       {
         "aliases": {
@@ -93,7 +110,9 @@
   "7": {
     "title": "Understanding Slice",
     "initialCode": "*.characters",
-    "codeSolution": "*.characters[isFemale == true && culture == \"Northmen\"][0...5]{name}",
+    "codeSolution": [
+      "*.characters[isFemale == true && culture == \"Northmen\"][0...5]{name}"
+    ],
     "result": [
       {
         "name": "Alys Karstark"
@@ -115,7 +134,9 @@
   "8": {
     "title": "Ordering Result",
     "initialCode": "*.characters",
-    "codeSolution": "*.characters[count(children) > 3]{name, children} | order(count(children) desc)[0...5]",
+    "codeSolution": [
+      "*.characters[count(children) > 3]{name, children} | order(count(children) desc)[0...5]"
+    ],
     "result": [
       {
         "name": "Robert I Baratheon",
@@ -142,7 +163,9 @@
   "9": {
     "title": "Joining Data",
     "initialCode": "*[_type == \"character\" && defined(father)][]{ \n\t// your code here \n}",
-    "codeSolution": "*[_type == \"character\" && defined(father)][]{ name, \"oldMan\": father->name }",
+    "codeSolution": [
+      "*[_type == \"character\" && defined(father)][]{ name, \"oldMan\": father->name }"
+    ],
     "result": [
       {
         "name": "Rodrik Greyjoy",
@@ -161,7 +184,9 @@
   "10": {
     "title": "Do GROQ Have Conditionals?",
     "initialCode": "*.characters",
-    "codeSolution": "*.characters[isFemale == true]{name, aliases, \"popularity\": select(count(aliases) >= 5 => \"high\", count(aliases) > 2 => \"medium\",\"low\")} | order(count(aliases) desc)[0...10]",
+    "codeSolution": [
+      "*.characters[isFemale == true]{\nname,\naliases,\n\"popularity\":\nselect (\n\tcount(aliases) >= 5 => \"high\",\n\tcount(aliases) > 2 => \"medium\",\n\t\"low\"\n)} | order(count(aliases) desc)[0...10]"
+    ],
     "result": [
       {
         "name": "Arya Stark",
