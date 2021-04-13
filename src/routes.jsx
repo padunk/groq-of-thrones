@@ -7,6 +7,7 @@ import { LessonContext, lessonCtx } from "./context/LessonContext"
 import { LessonMain } from "./Lesson"
 import { Finished } from "./Finished"
 import { NoMatch } from "./NoMatch"
+import { Solutions } from "./Solutions"
 
 export const Routes = () => {
   return (
@@ -19,6 +20,9 @@ export const Routes = () => {
             </Route>
             <Route path="/about">
               <About />
+            </Route>
+            <Route path="/solutions">
+              <Solutions />
             </Route>
             <Route path="/lesson/:lessonID">
               <LessonMain />

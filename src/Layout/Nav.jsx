@@ -56,6 +56,9 @@ export const Nav = () => {
             Lessons
           </button>
         </Box>
+        <Box as="li" listStyleType="none" paddingY="1" paddingX="2">
+          <NavLink to="/solutions">Solutions</NavLink>
+        </Box>
         <LinkBox as="li" listStyleType="none" paddingY="1" paddingX="2">
           <Link href="https://github.com/padunk/groq-of-thrones" isExternal>
             <VscGithubInverted />
