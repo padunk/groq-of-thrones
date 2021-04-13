@@ -1,6 +1,6 @@
 # 3. Querying Game of Thrones Characters {.lesson-header}
 
-GROQ is different compare with [GraphQL](https://graphql.org){.lesson-link}. You can learn more about the differences [here](https://www.sanity.io/docs/what-about-graphql){.lesson-link}. {.lesson-p}
+GROQ is different compare to [GraphQL](https://graphql.org){.lesson-link}. You can learn more about the differences [here](https://www.sanity.io/docs/what-about-graphql){.lesson-link}. {.lesson-p}
 
 Anyway let's start our lesson by getting more fun dataset like [Game of Thrones characters](https://anapioficeandfire.com/){.lesson-link}. The schema for the character look like this: {.lesson-p}
 
@@ -41,7 +41,7 @@ Ok, so in this lesson we already download the characters dataset for you. Now le
 The query is easy and almost the same with the last one, but we add three more thing here: {.lesson-p}
 
 1. `.characters`{.lesson-code}, this mean that the data is stored inside `characters`{.lesson-code} property. Not like the last one when we start with `*`{.lesson-code} which mean the whole JSON document is contained in an array at the top-level of the dataset. {.lesson-list-item}
-2. Conditional logic here with `&&`{.lesson-code} (AND) operator. {.lesson-list-item}
+2. Conditional logic with `&&`{.lesson-code} (AND) operator. {.lesson-list-item}
    {.lesson-list}
 
 Since the return value will be an array, you could also be more specific with your query by adding it at the end like:
