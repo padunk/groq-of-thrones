@@ -27,6 +27,58 @@ const StyledLink = ({ href, children }) => {
   )
 }
 
+const abouts = {
+  roadmap: [
+    {
+      name: "Highlight the GROQ syntax error in lesson editor.",
+      href: "#",
+    },
+    {
+      name: "Don't compare the user result with hardcode code.",
+      href: "#",
+    },
+    { name: "Points system so this lesson looks like a game?", href: "#" },
+    {
+      name:
+        "Restrict lesson so user need to finish one before moving forward? Need auth?",
+      href: "#",
+    },
+    { name: "Preserve user code for each lesson.", href: "#" },
+  ],
+  anotherSource: [
+    { name: "GROQ Documentation", href: "https://www.sanity.io/docs/groq" },
+    {
+      name: "GROQ Working Draft",
+      href: "https://sanity-io.github.io/GROQ/draft/",
+    },
+    {
+      name: "GROQ Cheat Sheet",
+      href: "https://www.sanity.io/docs/query-cheat-sheet",
+    },
+    {
+      name: "GROQ Slack Channel",
+      href: "https://sanity-io-land.slack.com/archives/C011CAT70DD",
+    },
+    {
+      name: "Learn GROQ in 30 minutes",
+      href: "https://hdoro.dev/learn-groq",
+    },
+  ],
+  author: [
+    { name: "Is looking for a remote job 🔥 😎.", href: "#" },
+    { name: "Live in Indonesia (GMT +7).", href: "#" },
+    {
+      name: "Love eating noodles, pork chop and 🍻 with friends.",
+      href: "#",
+    },
+    {
+      name:
+        "Code in HTML, CSS, React, React Native, Svelte, Sanity, Amplify, and Firebase.",
+      href: "#",
+    },
+  ],
+}
+
 export const About = () => {
   return (
     <Flex direction="column" h="full" w="full">
@@ -84,27 +136,18 @@ export const About = () => {
             Another GROQ Source:
           </Text>
           <List spacing={2} maxW="xl" fontSize="md">
-            <ListItem>
-              <ListIcon as={GiBlackBook} color="orange.400" display="inline" />
-              GROQ{" "}
-              <StyledLink href="https://www.sanity.io/docs/groq">
-                Documentation.
-              </StyledLink>
-            </ListItem>
-            <ListItem>
-              <ListIcon as={GiBlackBook} color="orange.400" display="inline" />
-              GROQ{" "}
-              <StyledLink href="https://sanity-io.github.io/GROQ/draft/">
-                Working Draft.
-              </StyledLink>
-            </ListItem>
-            <ListItem>
-              <ListIcon as={GiBlackBook} color="orange.400" display="inline" />
-              GROQ{" "}
-              <StyledLink href="https://www.sanity.io/docs/query-cheat-sheet">
-                Cheat Sheet.
-              </StyledLink>
-            </ListItem>
+            {abouts.anotherSource.map((source) => {
+              return (
+                <ListItem key={source.name}>
+                  <ListIcon
+                    as={GiBlackBook}
+                    color="orange.400"
+                    display="inline"
+                  />
+                  <StyledLink href={source.href}>{source.name}</StyledLink>
+                </ListItem>
+              )
+            })}
           </List>
         </Box>
 
@@ -113,27 +156,14 @@ export const About = () => {
             Roadmap:
           </Text>
           <List spacing={2} maxW="xl" fontSize="md">
-            <ListItem>
-              <ListIcon as={GiRoad} color="pink.400" display="inline" />
-              Highlight the GROQ syntax error in lesson editor.
-            </ListItem>
-            <ListItem>
-              <ListIcon as={GiRoad} color="pink.400" display="inline" />
-              Don't compare the user result with hardcode code.
-            </ListItem>
-            <ListItem>
-              <ListIcon as={GiRoad} color="pink.400" display="inline" />
-              Points system so this lesson looks like a game?
-            </ListItem>
-            <ListItem>
-              <ListIcon as={GiRoad} color="pink.400" display="inline" />
-              Restrict lesson so user need to finish one before going to
-              another? Need auth?
-            </ListItem>
-            <ListItem>
-              <ListIcon as={GiRoad} color="pink.400" display="inline" />
-              Preserve user code for each lesson.
-            </ListItem>
+            {abouts.roadmap.map((road) => {
+              return (
+                <ListItem key={road.name}>
+                  <ListIcon as={GiRoad} color="pink.400" display="inline" />
+                  {road.name}
+                </ListItem>
+              )
+            })}
           </List>
         </Box>
 
@@ -142,23 +172,18 @@ export const About = () => {
             The Author of this project:
           </Text>
           <List spacing={2} maxW="xl" fontSize="md">
-            <ListItem>
-              <ListIcon as={GiSeaDragon} color="blue.400" display="inline" />
-              Is looking for a remote job.
-            </ListItem>
-            <ListItem>
-              <ListIcon as={GiSeaDragon} color="blue.400" display="inline" />
-              Live in Indonesia (GMT +7).
-            </ListItem>
-            <ListItem>
-              <ListIcon as={GiSeaDragon} color="blue.400" display="inline" />
-              Love eating noodles, pork chop and 🍻 with friends.
-            </ListItem>
-            <ListItem>
-              <ListIcon as={GiSeaDragon} color="blue.400" display="inline" />
-              Code in HTML, CSS, React, React Native, Svelte, Sanity, Amplify,
-              and Firebase.
-            </ListItem>
+            {abouts.author.map((auth) => {
+              return (
+                <ListItem key={auth.name}>
+                  <ListIcon
+                    as={GiSeaDragon}
+                    color="blue.400"
+                    display="inline"
+                  />
+                  {auth.name}
+                </ListItem>
+              )
+            })}
             <ListItem>
               <ListIcon as={GiSeaDragon} color="blue.400" display="inline" />
               This project is built with{" "}
