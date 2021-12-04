@@ -5,7 +5,8 @@
     "dev": "vite",
     "build": "vite build",
     "serve": "vite build && vite preview",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "test": "jest"
   },
   "author": {
     "name": "Abraham A. A. ",
@@ -44,7 +45,10 @@
   "devDependencies": {
     "@babel/core": "^7.13.10",
     "@babel/preset-react": "^7.12.13",
+    "@testing-library/jest-dom": "^5.12.0",
+    "@testing-library/react": "^11.2.7",
     "@vitejs/plugin-react-refresh": "^1.1.0",
+    "jest": "^27.0.3",
     "prettier": "2.2.1",
     "vite": "^2.1.2",
     "vite-plugin-markdown": "^2.0.2"
