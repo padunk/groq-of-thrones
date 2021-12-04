@@ -68,7 +68,7 @@ const CodemirrorResult = ({ codeResult, handlePlayButtonPosition }) => {
 
   return (
     <Flex h="full" fontSize="xl">
-      <div id="codemirror-result" />
+      <div id="codemirror-result" style={{ width: "100%" }} />
     </Flex>
   )
 }

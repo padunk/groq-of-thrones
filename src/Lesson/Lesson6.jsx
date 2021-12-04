@@ -62,7 +62,7 @@ const CodemirrorLesson = ({ codeInput, setCodeInput }) => {
 
   return (
     <Flex h="full" fontSize="xl">
-      <div id="codemirror-lesson" />
+      <div id="codemirror-lesson" style={{ width: "100%" }} />
     </Flex>
   )
 }
