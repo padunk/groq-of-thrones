@@ -11,7 +11,8 @@ import {
   Heading,
 } from "@chakra-ui/react"
 import lessons from "./lessons/data/lessons.json"
-import { highlightAll } from "highlight.js"
+// import { highlightAll } from "highlight.js"
+import { highlightBlock } from "highlight.js"
 
 export const Solutions = () => {
   const solutions = Object.keys(lessons).map((key) => {
@@ -22,7 +23,10 @@ export const Solutions = () => {
   })
 
   useEffect(() => {
-    highlightAll()
+    // highlightAll()
+    document.querySelectorAll("code").forEach((codeBlock) => {
+      highlightBlock(codeBlock)
+    })
   }, [])
 
   return (
