@@ -38,8 +38,9 @@ export const Nav = () => {
           color="green.300"
           display="flex"
           alignItems="center"
+          as="h1"
         >
-          <h1>GROQ of Thrones</h1>
+          <p>GROQ of Thrones</p>
         </Heading>
       </Flex>
       <Spacer />
