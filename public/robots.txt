@@ -1,0 +1,22 @@
+# Allow all web crawlers to access all content
+User-agent: *
+Disallow:
+
+# Block a specific web crawler (e.g., BadBot)
+User-agent: BadBot
+Disallow: /
+
+# Block access to specific directories
+User-agent: *
+Disallow:
+
+# Block access to specific files
+User-agent: *
+Disallow:
+
+# Allow access to a specific file in a disallowed directory
+User-agent: *
+Allow: *
+
+# Specify the location of the sitemap
+Sitemap: https://groq-of-thrones.netlify.app/sitemap.xml
